@@ -5,55 +5,81 @@
 // Siga os comentários para implementar cada parte do desafio.
 
 int main() {
-    // Nível Novato - Posicionamento dos Navios
-    // Sugestão: Declare uma matriz bidimensional para representar o tabuleiro (Ex: int tabuleiro[5][5];).
-    // Sugestão: Posicione dois navios no tabuleiro, um verticalmente e outro horizontalmente.
-    // Sugestão: Utilize `printf` para exibir as coordenadas de cada parte dos navios.
 
-    char coluna[11] = {' ', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'}; //identificação das colunas do tabuleiro
-    int i, j;
-    int tabuleiro[10][11] = {
-        {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-        {2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-        {3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-        {4, 0, 0, 3, 3, 3, 0, 0, 0, 0, 0}, // navio na horizontal
-        {5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-        {6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-        {7, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0}, // navio na vertical
-        {8, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0}, // navio na vertical
-        {9, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0}, // navio na vertical
-        {10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
-    };
+    int nivel;
+    printf("1. Nível Novato\n");
+    printf("2. Nível Aventureiro\n");
+    printf("3. Nível Mestre\n");
+    printf("Escolha o nível: ");
+    scanf("%d", &nivel);
 
-    printf("** TABULEIRO BATALHA NAVAL **\n"); // título
-    
-    for (j = 0; j<11; j++)
+    switch (nivel)
     {
-        printf("%c ", coluna[j]); //imprimindo a identificação das colunas
-    }
+        case 1:
+            // Nível Novato - Posicionamento dos Navios
+            // Sugestão: Declare uma matriz bidimensional para representar o tabuleiro (Ex: int tabuleiro[5][5];).
+            // Sugestão: Posicione dois navios no tabuleiro, um verticalmente e outro horizontalmente.
+            // Sugestão: Utilize `printf` para exibir as coordenadas de cada parte dos navios.
 
-    printf("\n"); //pular linha para separar título
+            char coluna[11] = {' ', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'}; //identificação das colunas do tabuleiro
+            int i, j;
+            int tabuleiro[10][11] = {
+                {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                {2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                {3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                {4, 0, 0, 3, 3, 3, 0, 0, 0, 0, 0}, // navio na horizontal
+                {5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                {6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                {7, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0}, // navio na vertical
+                {8, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0}, // navio na vertical
+                {9, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0}, // navio na vertical
+                {10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+            };
 
-    for (i = 0; i < 10; i++)
-    {
-        for (j = 0; j < 11; j++)
-        {         
-            printf("%d ", tabuleiro[i][j]); //imprimindo o tabuleiro
-        }
+            printf("** TABULEIRO BATALHA NAVAL **\n"); // título
         
-        printf("\n");
+            for (j = 0; j<11; j++)
+            {
+                printf("%c ", coluna[j]); //imprimindo a identificação das colunas
+            }
+
+            printf("\n"); //pular linha para separar título
+
+            for (i = 0; i < 10; i++)
+            {
+                for (j = 0; j < 11; j++)
+                {         
+                    printf("%d ", tabuleiro[i][j]); //imprimindo o tabuleiro
+                }
+            
+                printf("\n");
+            }
+        break;
+
+        case 2:
+        // Nível Aventureiro - Expansão do Tabuleiro e Posicionamento Diagonal
+        // Sugestão: Expanda o tabuleiro para uma matriz 10x10.
+        // Sugestão: Posicione quatro navios no tabuleiro, incluindo dois na diagonal.
+        // Sugestão: Exiba o tabuleiro completo no console, mostrando 0 para posições vazias e 3 para posições ocupadas.
+        break;
+
+        case 3:
+        // Nível Mestre - Habilidades Especiais com Matrizes
+        // Sugestão: Crie matrizes para representar habilidades especiais como cone, cruz, e octaedro.
+        // Sugestão: Utilize estruturas de repetição aninhadas para preencher as áreas afetadas por essas habilidades no tabuleiro.
+        // Sugestão: Exiba o tabuleiro com as áreas afetadas, utilizando 0 para áreas não afetadas e 1 para áreas atingidas.
+        break;
+
+        default:
+            printf("Você digitou uma opção inválida!\n");
+        break;
     }
 
 
-    // Nível Aventureiro - Expansão do Tabuleiro e Posicionamento Diagonal
-    // Sugestão: Expanda o tabuleiro para uma matriz 10x10.
-    // Sugestão: Posicione quatro navios no tabuleiro, incluindo dois na diagonal.
-    // Sugestão: Exiba o tabuleiro completo no console, mostrando 0 para posições vazias e 3 para posições ocupadas.
 
-    // Nível Mestre - Habilidades Especiais com Matrizes
-    // Sugestão: Crie matrizes para representar habilidades especiais como cone, cruz, e octaedro.
-    // Sugestão: Utilize estruturas de repetição aninhadas para preencher as áreas afetadas por essas habilidades no tabuleiro.
-    // Sugestão: Exiba o tabuleiro com as áreas afetadas, utilizando 0 para áreas não afetadas e 1 para áreas atingidas.
+
+
+
 
     // Exemplos de exibição das habilidades:
     // Exemplo para habilidade em cone:
