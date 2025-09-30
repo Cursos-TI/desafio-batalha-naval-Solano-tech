@@ -10,6 +10,38 @@ int main() {
     // Sugestão: Posicione dois navios no tabuleiro, um verticalmente e outro horizontalmente.
     // Sugestão: Utilize `printf` para exibir as coordenadas de cada parte dos navios.
 
+    char coluna[11] = {' ', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'}; //identificação das colunas do tabuleiro
+    int i, j;
+    int tabuleiro[10][10];
+    int navio1[3];
+    int navio2[3];
+
+    printf("** TABULEIRO BATALHA NAVAL **\n");
+    
+    for (j = 0; j<11; j++)
+    {
+        printf("%c ", coluna[j]); //imprimindo a identificação das colunas
+    }
+
+    printf("\n"); //pular linha para separar título
+
+    for (i = 0; i < 10; i++)
+    {
+        printf("%d ", i+1); //imprimindo a identificação das linhas
+
+        for (j = 0; j < 10; j++)
+        {         
+            printf("0 ", tabuleiro[i][j]); //imprimindo o tabuleiro
+        }
+        
+        printf("\n");
+    }
+
+
+
+
+
+
     // Nível Aventureiro - Expansão do Tabuleiro e Posicionamento Diagonal
     // Sugestão: Expanda o tabuleiro para uma matriz 10x10.
     // Sugestão: Posicione quatro navios no tabuleiro, incluindo dois na diagonal.
