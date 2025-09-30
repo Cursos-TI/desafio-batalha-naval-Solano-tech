@@ -12,11 +12,20 @@ int main() {
 
     char coluna[11] = {' ', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'}; //identificação das colunas do tabuleiro
     int i, j;
-    int tabuleiro[10][10];
-    int navio1[3];
-    int navio2[3];
+    int tabuleiro[10][11] = {
+        {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {4, 0, 0, 3, 3, 3, 0, 0, 0, 0, 0}, // navio na horizontal
+        {5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {7, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0}, // navio na vertical
+        {8, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0}, // navio na vertical
+        {9, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0}, // navio na vertical
+        {10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+    };
 
-    printf("** TABULEIRO BATALHA NAVAL **\n");
+    printf("** TABULEIRO BATALHA NAVAL **\n"); // título
     
     for (j = 0; j<11; j++)
     {
@@ -27,19 +36,13 @@ int main() {
 
     for (i = 0; i < 10; i++)
     {
-        printf("%d ", i+1); //imprimindo a identificação das linhas
-
-        for (j = 0; j < 10; j++)
+        for (j = 0; j < 11; j++)
         {         
-            printf("0 ", tabuleiro[i][j]); //imprimindo o tabuleiro
+            printf("%d ", tabuleiro[i][j]); //imprimindo o tabuleiro
         }
         
         printf("\n");
     }
-
-
-
-
 
 
     // Nível Aventureiro - Expansão do Tabuleiro e Posicionamento Diagonal
