@@ -23,19 +23,31 @@ int main() {
 
             char coluna[11] = {' ', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'}; //identificação das colunas do tabuleiro
             int i, j;
-            int tabuleiro[10][11] = {
-                {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                {2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                {3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                {4, 0, 0, 3, 3, 3, 0, 0, 0, 0, 0}, // navio na horizontal
-                {5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                {6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                {7, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0}, // navio na vertical
-                {8, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0}, // navio na vertical
-                {9, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0}, // navio na vertical
-                {10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
-            };
+            int tabuleiro[10][11];
 
+            for (i=0; i<10; i++)
+            {
+                for (j=0; j<11; j++)
+                {
+                    if (j == 0)
+                    {
+                        tabuleiro[i][j] = i+1; // cria identificação das linhas do tabuleiro
+                    }
+                    else if (j == 5 && i>=0 && i<3)
+                    {
+                        tabuleiro[i][j] = 3; // posicionar navio na vertical na coluna 'E'
+                    }
+                    else if (i == 7 && j>=3 && j<6)
+                    {
+                        tabuleiro[i][j] = 3; // posicionar navio na horizontal na linha '8'
+                    }
+                    else
+                    {
+                        tabuleiro[i][j] = 0;
+                    }
+                }
+            }
+            
             printf("** TABULEIRO BATALHA NAVAL **\n"); // título
         
             for (j = 0; j<11; j++)
@@ -61,6 +73,56 @@ int main() {
         // Sugestão: Expanda o tabuleiro para uma matriz 10x10.
         // Sugestão: Posicione quatro navios no tabuleiro, incluindo dois na diagonal.
         // Sugestão: Exiba o tabuleiro completo no console, mostrando 0 para posições vazias e 3 para posições ocupadas.
+
+            char coluna[11] = {' ', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'}; //identificação das colunas do tabuleiro
+            int i, j;
+            int tabuleiro[10][11];
+
+            for (i=0; i<10; i++)
+            {
+                for (j=0; j<11; j++)
+                {
+                    if (j == 0)
+                    {
+                        tabuleiro[i][j] = i+1; // cria identificação das linhas do tabuleiro
+                    }
+                    else if (j == 5 && i>=0 && i<3)
+                    {
+                        tabuleiro[i][j] = 3; // posicionar navio na vertical na coluna 'E'
+                    }
+                    else if (i == 7 && j>=3 && j<6)
+                    {
+                        tabuleiro[i][j] = 3; // posicionar navio na horizontal na linha '8'
+                    }
+                    else if (i == j-1)
+                    {
+                        tabuleiro[i][j] = 3;
+                    }
+                    else
+                    {
+                        tabuleiro[i][j] = 0;
+                    }
+                }
+            }
+            
+            printf("** TABULEIRO BATALHA NAVAL **\n"); // título
+        
+            for (j = 0; j<11; j++)
+            {
+                printf("%c ", coluna[j]); //imprimindo a identificação das colunas
+            }
+
+            printf("\n"); //pular linha para separar título
+
+            for (i = 0; i < 10; i++)
+            {
+                for (j = 0; j < 11; j++)
+                {         
+                    printf("%d ", tabuleiro[i][j]); //imprimindo o tabuleiro
+                }
+            
+                printf("\n");
+            }
         break;
 
         case 3:
